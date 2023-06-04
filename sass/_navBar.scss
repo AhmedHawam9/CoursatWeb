@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  background-color: #F7F5FA;
+    .logo {
+      width: 75px;
+    }
+  .navbar-collapse {
+    .navbar-nav {
+      margin: 0 auto;
+      .nav-item {
+        margin-inline-end: .5rem;
+        .nav-link {
+          font-family: "regular";
+          &.active {
+            font-family: "medium";
+          }
+        }
+      }
+    }
+    .SecondaryButton {
+      margin-inline-end: 1rem;
+    }
+  }
+}

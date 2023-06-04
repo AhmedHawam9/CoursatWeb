@@ -1,0 +1,75 @@
+@media only screen and (max-width: 991.98px) {
+  .header {
+    padding: 2rem 0 5rem;
+    h1 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: .8rem;
+    }
+    .image {
+      width: 100%;
+      height: 350px;
+      background-size: 350px 350px;
+      img {
+        height: 280px;
+      }
+    }
+    .statistics {
+      width: 90%;
+      right: 5%;
+      left: 5%;
+    }
+  }
+  .about {
+    .title {
+      font-size: 1.5rem;
+      &::after {
+        top: -5rem;
+      }
+    }
+    .text {
+      font-size: .8rem;
+    }
+    .PrimaryButton {
+      margin-bottom: 2rem;
+    }
+    .Join_student, .special_courses {
+      img {
+        height: 250px;
+      }
+    }
+  }
+  .features {
+    margin-top: 2rem;
+    .card_feature {
+      padding: 1rem;
+      .title {
+        h5 {
+          font-size: 1rem;
+        }
+      }
+      .text {
+        font-size: .7rem;
+      }
+    }
+    .video-js {
+      margin-top: 2rem;
+      height: 350px;
+    }
+  }
+  .discover_academic {
+    margin: 3rem 0;
+    .discovers {
+      .discover_card {
+        width: 31%;
+        &:nth-child(4n) {
+          margin-inline-end: 2%
+        }
+        &:nth-child(3n) {
+          margin-inline-end: 0;
+        }
+      }
+    }
+  }
+}

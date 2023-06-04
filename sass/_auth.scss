@@ -1,0 +1,398 @@
+
+
+
+.register {
+    .register_head {
+      background-color: $PrimaryColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+      height: 100%;
+      position: relative;
+  
+      .register_img {
+        width: 75%;
+        display: block;
+        margin: 0 auto 5rem;
+        z-index: 9;
+      }
+  
+      .password_verification_img {
+        width: 45%;
+        height: 550px;
+        display: block;
+        margin: 0 auto 5rem;
+        z-index: 9;
+      }
+  
+      h5 {
+        color: #fff;
+        font-family: "medium";
+        text-align: center;
+        margin: 0 auto;
+        width: 70%;
+        z-index: 9;
+      }
+  
+      p {
+        color: #fff;
+        font-family: "regular";
+        text-align: center;
+        margin: 1rem auto 0;
+        width: 70%;
+        font-size: .8rem;
+        z-index: 9;
+      }
+  
+      .register_shape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        opacity: .05;
+        width: 100%;
+      }
+    }
+  
+    .register_card {
+      height: 80vh;
+      margin: 10vh 0;
+      width: 70%;
+      margin-inline-start: 10% !important;
+      margin-inline-end: 20% !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      lottie-player {
+        width: 80px;
+        height: 80px;
+        margin-bottom: .5rem;
+      }
+  
+      h4 {
+        color: #011C1E;
+        font-family: "medium";
+      }
+  
+      p {
+        color: #828C8D;
+        font-family: "regular";
+        margin-bottom: 3rem;
+        font-size: .9rem;
+      }
+  
+      .form-group {
+        margin-bottom: 1rem;
+        position: relative;
+  
+        svg {
+          position: absolute;
+          top: 60%;
+          left: 1%;
+          color: #B0B9B9;
+        }
+  
+        label {
+          font-family: "regular";
+          color: #011C1E;
+          margin-bottom: .5rem;
+          font-size: .9rem;
+        }
+  
+        input {
+          padding-inline-start: 2rem !important;
+          font-family: "regular";
+          color: #B0B9B9;
+          font-size: .8rem;
+          padding: .75rem 1.5rem;
+        }
+  
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+  
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+  
+        .togglePassword {
+          position: absolute;
+          top: 47%;
+          right: 0;
+  
+          svg {
+            position: unset;
+          }
+  
+          &:hover,
+          &:focus {
+            border-color: transparent;
+          }
+        }
+  
+        .number-code {
+          display: flex;
+  
+          input {
+            width: 16%;
+            margin-inline-end: 1%;
+            padding-inline-start: .5rem !important;
+            padding-inline-end: .5rem !important;
+            height: 75px;
+            font-size: 2rem;
+            text-align: center;
+  
+            &:last-child {
+              margin-inline-end: 0;
+            }
+          }
+        }
+  
+        .receive_code {
+          display: block;
+          width: 100%;
+          text-align: end;
+          margin-top: 1rem;
+          margin-bottom: 3rem;
+          text-decoration: none;
+          font-family: "regular";
+          color: #011C1E;
+        }
+      }
+  
+      .resend_code {
+        background-color: $SecondColor;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+  
+        p {
+          font-family: "regular";
+          color: #fff;
+          width: 50%;
+          margin-bottom: 0;
+        }
+  
+        .btn {
+          background-color: #fff;
+          color: #011C1E;
+          font-family: "medium";
+          font-size: .8rem;
+          padding: .75rem 1rem;
+  
+          &:hover {
+            border-color: transparent;
+          }
+        }
+      }
+  
+      .form-check {
+        color: #596364;
+        font-family: "regular";
+        margin-bottom: 1rem;
+      }
+  
+      .forget_password {
+        font-family: "regular";
+        color: #011C1E;
+        text-decoration: none;
+      }
+  
+      .submit_btn {
+        background-color: $PrimaryColor;
+        color: #fff;
+        font-family: "medium";
+        padding: 1rem;
+        font-size: .9rem;
+        width: 100%;
+        margin-top: .7rem;
+  
+        &:hover {
+          border-color: transparent !important;
+        }
+      }
+  
+      .have_login {
+        color: #596364;
+        font-family: "medium";
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 4rem;
+  
+        a {
+          color: $PrimaryColor;
+          text-decoration: none;
+        }
+      }
+    }
+  
+    .password_verification {
+      width: 50%;
+    }
+  }
+  
+  .reset_password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+    .card_reset_password {
+      width: 50%;
+      margin: 0 auto;
+      border: .7px solid #989898;
+      padding: 4rem;
+      border-radius: 8px;
+  
+      h4 {
+        font-family: "medium";
+        text-align: center;
+        color: #011C1E;
+      }
+  
+      p {
+        font-family: "regular";
+        color: #828C8D;
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+        font-size: .8rem;
+      }
+  
+      .form-group {
+        margin-bottom: 1rem;
+        position: relative;
+  
+        label {
+          font-family: "regular";
+          color: #011C1E;
+          margin-bottom: .5rem;
+          font-size: .9rem;
+        }
+  
+        input {
+          padding-inline-start: 2rem !important;
+          font-family: "regular";
+          color: #B0B9B9;
+          font-size: .8rem;
+          padding: .75rem 1.5rem;
+        }
+  
+        svg {
+          position: absolute;
+          top: 60%;
+          left: 2%;
+          color: #B0B9B9;
+        }
+  
+        .togglePassword {
+          position: absolute;
+          top: 47%;
+          right: 0;
+  
+          svg {
+            position: unset;
+          }
+  
+          &:hover,
+          &:focus {
+            border-color: transparent;
+          }
+        }
+  
+      }
+  
+      .submit_btn {
+        background-color: $PrimaryColor;
+        color: #fff;
+        font-family: "medium";
+        font-size: .8rem;
+        padding: .75rem 1.5rem;
+        margin-top: 1rem;
+        width: 100%;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 991.98px) {
+    .register {
+      .register_head {
+        background-color: $PrimaryColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: fit-content;
+        height: fit-content;
+        position: relative;
+        padding: 3rem 0;
+  
+        .register_img {
+          width: 75%;
+          display: block;
+          margin: 0 auto 5rem;
+          z-index: 9;
+        }
+  
+        h5 {
+          width: 90%;
+        }
+  
+        p {
+          width: 90%;
+        }
+      }
+  
+      .register_card {
+        width: 80%;
+        margin-inline-end: 10% !important;
+        margin-inline-start: 10% !important;
+        height: 90%;
+        margin: 5% 0;
+  
+        .form-group {
+          svg {
+            left: 2%;
+          }
+        }
+  
+        .have_login {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .register {
+      .register_head {
+        .password_verification_img {
+          height: 300px;
+        }
+      }
+  
+      .register_card {
+        .form-group {
+          input {
+            padding-inline-start: 1.7rem !important;
+          }
+        }
+  
+        .form-check {
+          font-size: .8rem;
+        }
+  
+        .forget_password {
+          font-size: .8rem;
+        }
+      }
+    }
+  }

@@ -1,0 +1,59 @@
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 2rem 0;
+    .statistics {
+      width: 100%;
+      flex-direction: column;
+      position: unset;
+      margin-top: 2rem;
+      .statistic {
+        width: 80%;
+        margin: 0 auto 1rem;
+        &:last-child {
+          margin-inline-end: auto;
+        }
+      }
+    }
+  }
+  .about {
+    margin-top: 5rem;
+    .title {
+      &::after {
+        left: 0;
+      }
+    }
+  }
+  .features {
+    .card_feature {
+      margin-bottom: 1rem;
+    }
+    .video-js {
+      height: 300px;
+    }
+  }
+  .discover_academic {
+    .text {
+      h2 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: .7rem;
+      }
+    }
+    .discovers {
+      .discover_card {
+        width: 48%;
+        padding: 1rem;
+        &:nth-child(3n) {
+          margin-inline-end: 2%;
+        }
+        &:nth-child(2n) {
+          margin-inline-end: 0;
+        }
+        span {
+          font-size: .7rem;
+        }
+      }
+    }
+  }
+}
