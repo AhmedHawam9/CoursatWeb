@@ -12,12 +12,14 @@
     <!-- ? Main CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="css/hover-min.css" />
     <link rel="stylesheet" href="sass/style.min.css" />
     <!-- ? Main CSS -->
 
     <!-- ? Custom CSS -->
-    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/video-js.min.css" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-select.min.css" />
     <!-- ? Custom CSS -->
 
     <!-- ? Main JavaScript -->
@@ -30,6 +32,7 @@
     <!-- ? Custom JavaScript -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
     <!-- ? Custom JavaScript -->
 
     <!-- ? Title -->
@@ -84,13 +87,358 @@
             </li>
           </ul>
           <div class="d-flex">
-            <a href="#" class="btn SecondaryButton">انشاء حساب</a>
-            <a href="#" class="btn PrimaryButton">تسجيل الدخول</a>
+            <button class="btn SecondaryButton" data-bs-toggle="modal" data-bs-target="#registerModal">انشاء حساب</button>
+            <button class="btn PrimaryButton" data-bs-toggle="modal" data-bs-target="#loginModal">تسجيل الدخول</button>
           </div>
         </div>
       </div>
     </nav>
     <!-- End Navbar section -->
+
+    <!-- Login Popup Form -->
+    <!-- Modal -->
+    <div class="modal auth_modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="auth">
+              <div class="image">
+                <img src="./media/image/login.png" alt="login">
+              </div>
+              <form action="" class="form">
+                <h4>مرحباً بك في منصة <span>كورساتي</span></h4>
+                <p>من فضلك قم بأدخال البيانات التالية للأستمرار</p>
+                <div class="form-group">
+                  <label for="">رقم الهاتف</label>
+                  <input type="tel" name="" id="" class="form-control" pattern="[0-9]" placeholder="ادحل رقم الهاتف">
+                </div>
+                <div class="form-group">
+                  <label for="">كلمة المرور</label>
+                  <input type="password" id="txtPassword" name="txtPassword" class="form-control" placeholder="ادحل كلمة المرور">
+                  <button type="button" id="btnToggle" class="toggle btn">
+                    <i id="eyeIcon" class="fas fa-eye-slash"></i>
+                  </button>
+                </div>
+                <button type="submit" class="btn PrimaryButton">تسجيل الدخول</button>
+                <!-- =========== show password =========== -->
+                <script>
+                  let passwordInput = document.getElementById("txtPassword"),
+                    toggle = document.getElementById("btnToggle"),
+                    icon = document.getElementById("eyeIcon");
+
+                  function togglePassword() {
+                    if (passwordInput.type === "password") {
+                      passwordInput.type = "text";
+                      icon.classList.add("fa-eye-slash");
+                      toggle.innerHTML = '<i class="fa fa-eye"></i>';
+                    } else {
+                      passwordInput.type = "password";
+                      icon.classList.remove("fa-eye-slash");
+                      toggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                    }
+                  }
+
+                  function checkInput() {
+                    //if (passwordInput.value === '') {
+                    //toggle.style.display = 'none';
+                    //toggle.innerHTML = 'show';
+                    //  passwordInput.type = 'password';
+                    //} else {
+                    //  toggle.style.display = 'block';
+                    //}
+                  }
+
+                  toggle.addEventListener("click", togglePassword, false);
+                  passwordInput.addEventListener("keyup", checkInput, false);
+                </script>
+                <!-- =========== show password =========== -->
+
+                <div class="anthor_link">
+                  <p data-bs-toggle="modal" data-bs-target="#registerModal">ليس لديك حساب؟ <span>حساب جديد</span></p>
+                  <p data-bs-toggle="modal" data-bs-target="#forgetPasswordModal">هل نسيت كلمة المرور ؟</p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login Popup Form -->
+
+    <!-- forget password Popup Form -->
+    <!-- Modal -->
+    <div class="modal auth_modal fade" id="forgetPasswordModal" tabindex="-1" aria-labelledby="forgetPasswordModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="auth">
+              <div class="image">
+                <img src="./media/image/login.png" alt="login">
+              </div>
+              <form action="" class="form">
+                <h4>نسيت كلمة المرور</h4>
+                <p>ادخل رقم الجوال الذي قمت بالتسجيل به لاستلام كود يمكنك من خلاله استرجاع كلمة المرور</p>
+                <div class="form-group">
+                  <label for="">رقم الهاتف</label>
+                  <input type="tel" name="" id="" class="form-control" pattern="[0-9]" placeholder="ادحل رقم الهاتف">
+                </div>
+                <button type="button" class="btn PrimaryButton" data-bs-toggle="modal" data-bs-target="#verificationCodeModal">ارسال</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- forget password Popup Form -->
+    
+    <!-- Verification code Popup Form -->
+    <!-- Modal -->
+    <div class="modal auth_modal fade" id="verificationCodeModal" tabindex="-1" aria-labelledby="verificationCodeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="auth">
+              <div class="image">
+                <img src="./media/image/login.png" alt="login">
+              </div>
+              <form action="" class="form verification_code">
+                <h4>كود الاسترجاع</h4>
+                <p>ادخل الكود الذي تم ارسالة الى رقم 0125487522 لاسترجاع كلمة المرور الخاصة بك</p>
+                <div class="d-flex mb-3">
+                  <input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+                  <input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+                  <input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+                  <input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+                  <input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+                  <input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+                </div>
+                <div class="anthor_link flex-column">
+                  <p>لم تستلم الكود بعد؟</p>
+                  <p>اعادة الارسال بعد <span>(00:59)</span></p>
+                </div>
+                <script>
+                  const form = document.querySelector('.verification_code')
+                  const inputs = form.querySelectorAll('input')
+                  const KEYBOARDS = {
+                    backspace: 8,
+                    arrowLeft: 39,
+                    arrowRight: 37,
+                  }
+
+                  function handleInput(e) {
+                    const input = e.target
+                    const nextInput = input.nextElementSibling
+                    if (nextInput && input.value) {
+                      nextInput.focus()
+                      if (nextInput.value) {
+                        nextInput.select()
+                      }
+                    }
+                  }
+
+                  function handlePaste(e) {
+                    e.preventDefault()
+                    const paste = e.clipboardData.getData('text')
+                    inputs.forEach((input, i) => {
+                      input.value = paste[i] || ''
+                    })
+                  }
+
+                  function handleBackspace(e) { 
+                    const input = e.target
+                    if (input.value) {
+                      input.value = ''
+                      return
+                    }
+                    
+                    input.previousElementSibling.focus()
+                  }
+
+                  function handleArrowLeft(e) {
+                    const previousInput = e.target.previousElementSibling
+                    if (!previousInput) return
+                    previousInput.focus()
+                  }
+
+                  function handleArrowRight(e) {
+                    const nextInput = e.target.nextElementSibling
+                    if (!nextInput) return
+                    nextInput.focus()
+                  }
+
+                  form.addEventListener('input', handleInput)
+                  inputs[0].addEventListener('paste', handlePaste)
+
+                  inputs.forEach(input => {
+                    input.addEventListener('focus', e => {
+                      setTimeout(() => {
+                        e.target.select()
+                      }, 0)
+                    })
+                    
+                    input.addEventListener('keydown', e => {
+                      switch(e.keyCode) {
+                        case KEYBOARDS.backspace:
+                          handleBackspace(e)
+                          break
+                        case KEYBOARDS.arrowLeft:
+                          handleArrowLeft(e)
+                          break
+                        case KEYBOARDS.arrowRight:
+                          handleArrowRight(e)
+                          break
+                        default:  
+                      }
+                    })
+                  })
+                </script>
+                <button type="button" class="btn PrimaryButton" data-bs-toggle="modal" data-bs-target="#reserPasswordModal">ارسال</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Verification code Popup Form -->
+
+    <!-- Reset Password Popup Form -->
+    <!-- Modal -->
+    <div class="modal auth_modal fade" id="reserPasswordModal" tabindex="-1" aria-labelledby="reserPasswordModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="auth">
+              <div class="image">
+                <img src="./media/image/login.png" alt="login">
+              </div>
+              <form action="" class="form">
+                <h4>كلمة المرور الجديدة</h4>
+                <p>ادخل كلمة مرور قوية تحتوي على الاقل 8 رموز مكونة من حروف و ارقام</p>
+                <div class="form-group">
+                  <label for="">كلمة المرور الجديدة</label>
+                  <input type="password" name="" id="" class="form-control" placeholder="ادحل كلمة المرور">
+                </div>
+                <div class="form-group">
+                  <label for="">تأكيد كلمة المرور</label>
+                  <input type="password" name="" id="" class="form-control" placeholder="ادحل كلمة المرور">
+                </div>
+                <button type="submit" class="btn PrimaryButton">تسجيل الدخول</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Reset Password Popup Form -->
+
+    <!-- register Popup Form -->
+    <!-- Modal -->
+    <div class="modal auth_modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="auth">
+              <div class="image">
+                <img src="./media/image/login.png" alt="login">
+              </div>
+              <form action="" class="form">
+                <h4>مرحباً بك في منصة <span>كورساتي</span></h4>
+                <p>من فضلك قم بأدخال البيانات التالية للأستمرار</p>
+                <div class="form-group">
+                  <label for="">اسم المستخدم</label>
+                  <input type="text" name="" id="" class="form-control" placeholder="ادخل الاسم بالكامل">
+                </div>
+                <div class="form-group">
+                  <label for="">ولي الامر</label>
+                  <input type="text" name="" id="" class="form-control" placeholder="ادخل الاسم بالكامل">
+                </div>
+                <div class="form-group">
+                  <label for="">رقم الهاتف</label>
+                  <input type="tel" name="" id="" class="form-control" pattern="[0-9]" placeholder="ادحل رقم الهاتف">
+                </div>
+                <div class="form-group">
+                  <label for="">كلمة المرور</label>
+                  <input type="password" id="txtPassword" name="txtPassword" class="form-control" placeholder="ادحل كلمة المرور">
+                  <button type="button" id="btnToggle" class="toggle btn">
+                    <i id="eyeIcon" class="fas fa-eye-slash"></i>
+                  </button>
+                </div>
+                <div class="form-group">
+                  <label for="">تأكيد كلمة المرور</label>
+                  <input type="password" id="txtPassword" name="txtPassword" class="form-control" placeholder="ادحل كلمة المرور">
+                  <button type="button" id="btnToggle" class="toggle btn">
+                    <i id="eyeIcon" class="fas fa-eye-slash"></i>
+                  </button>
+                </div>
+                <button type="button" class="btn PrimaryButton" data-bs-toggle="modal" data-bs-target="#dataModal">انشاء حساب</button>
+
+                <div class="anthor_link">
+                  <p data-bs-toggle="modal" data-bs-target="#loginModal"> لديك حساب بالفعل ؟ <span>تسجيل الدخول</span></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- register Popup Form -->
+
+    <!-- register Popup Form -->
+    <!-- Modal -->
+    <div class="modal auth_modal fade" id="dataModal" tabindex="-1" aria-labelledby="dataModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="auth">
+              <div class="image">
+                <img src="./media/image/login.png" alt="login">
+              </div>
+              <form action="" class="form">
+                <h4>مرحباً بك في منصة <span>كورساتي</span></h4>
+                <p>قم بأدخال المعلومات الدراسية</p>
+                <div class="form-group">
+                  <label for="">نوع التعليم</label>
+                  <select name="" id="" class="form-control selectpicker" title="اختر نوع التعليم">
+                    <option value="">تيست</option>
+                    <option value="">تيست</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="">المستوي التعليمي</label>
+                  <select name="" id="" class="form-control selectpicker" title="اختر المستوي التعليمي">
+                    <option value="">تيست</option>
+                    <option value="">تيست</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="">المرحلة التعليمية</label>
+                  <select name="" id="" class="form-control selectpicker" title="اختر المرحلة التعليمية">
+                    <option value="">تيست</option>
+                    <option value="">تيست</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="">الفرقة</label>
+                  <select name="" id="" class="form-control selectpicker" title="اختر الفرقة">
+                    <option value="">تيست</option>
+                    <option value="">تيست</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="">هل لديك مواد رسوب؟</label>
+                  <select name="" id="" class="form-control selectpicker" title="قم بتحديد مواد الرسوب  (اختياري)">
+                    <option value="">تيست</option>
+                    <option value="">تيست</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn PrimaryButton">ابدأ الان</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- register Popup Form -->
 
     <!-- Start Navbar section -->
     <section class="header">
@@ -103,7 +451,7 @@
               نعمل على إعداد نخبة متميزة من الطلاب المتفوقين بتقديم الكورسات في
               مختلف المجالات بمساعدة أمهر الأساتذة المميزون في مجالاتهم المختلفة
             </p>
-            <button type="button" class="btn PrimaryButton">
+            <button type="button" class="btn PrimaryButton" data-bs-toggle="modal" data-bs-target="#loginModal">
               تسجيل الدخول <i class="fa-solid fa-arrow-left"></i>
             </button>
           </div>
@@ -336,7 +684,7 @@
         <div class="row">
           <!-- For loop this card course -->
           <div class="col-lg-4 col-md-6 col-12">
-            <a href="#" class="card_course">
+            <a href="single_course.html" class="card_course">
               <img src="./media/image/course1.jpg" alt="course" />
               <div class="d-flex justify-content-between align-items-center">
                 <p class="subject">محاسبة ضريبية</p>
@@ -421,18 +769,22 @@
                   </div>
                   <p class="text">
                     " هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
-                    توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا
-                    النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى
-                    يولدها التطبيق "
+                    توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل
+                    هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد
+                    الحروف التى يولدها التطبيق "
                   </p>
                   <div class="student_info">
-                    <img src="./media/image/7w7w.jpg" alt="student">
+                    <img src="./media/image/7w7w.jpg" alt="student" />
                     <div class="info">
                       <p class="name">احمد حوام</p>
                       <p class="text">طالب جامعي</p>
                     </div>
                   </div>
-                  <img src="./media/image/icon/quotes.png" alt="quotes" class="quotes">
+                  <img
+                    src="./media/image/icon/quotes.png"
+                    alt="quotes"
+                    class="quotes"
+                  />
                 </div>
                 <!-- End card say -->
               </div>
@@ -451,18 +803,22 @@
                   </div>
                   <p class="text">
                     " هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
-                    توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا
-                    النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى
-                    يولدها التطبيق "
+                    توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل
+                    هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد
+                    الحروف التى يولدها التطبيق "
                   </p>
                   <div class="student_info">
-                    <img src="./media/image/7w7w.jpg" alt="student">
+                    <img src="./media/image/7w7w.jpg" alt="student" />
                     <div class="info">
                       <p class="name">احمد حوام</p>
                       <p class="text">طالب جامعي</p>
                     </div>
                   </div>
-                  <img src="./media/image/icon/quotes.png" alt="quotes" class="quotes">
+                  <img
+                    src="./media/image/icon/quotes.png"
+                    alt="quotes"
+                    class="quotes"
+                  />
                 </div>
                 <!-- End card say -->
               </div>
@@ -481,18 +837,22 @@
                   </div>
                   <p class="text">
                     " هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
-                    توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا
-                    النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى
-                    يولدها التطبيق "
+                    توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل
+                    هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد
+                    الحروف التى يولدها التطبيق "
                   </p>
                   <div class="student_info">
-                    <img src="./media/image/7w7w.jpg" alt="student">
+                    <img src="./media/image/7w7w.jpg" alt="student" />
                     <div class="info">
                       <p class="name">احمد حوام</p>
                       <p class="text">طالب جامعي</p>
                     </div>
                   </div>
-                  <img src="./media/image/icon/quotes.png" alt="quotes" class="quotes">
+                  <img
+                    src="./media/image/icon/quotes.png"
+                    alt="quotes"
+                    class="quotes"
+                  />
                 </div>
                 <!-- End card say -->
               </div>
@@ -511,18 +871,22 @@
                   </div>
                   <p class="text">
                     " هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
-                    توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا
-                    النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى
-                    يولدها التطبيق "
+                    توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل
+                    هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد
+                    الحروف التى يولدها التطبيق "
                   </p>
                   <div class="student_info">
-                    <img src="./media/image/7w7w.jpg" alt="student">
+                    <img src="./media/image/7w7w.jpg" alt="student" />
                     <div class="info">
                       <p class="name">احمد حوام</p>
                       <p class="text">طالب جامعي</p>
                     </div>
                   </div>
-                  <img src="./media/image/icon/quotes.png" alt="quotes" class="quotes">
+                  <img
+                    src="./media/image/icon/quotes.png"
+                    alt="quotes"
+                    class="quotes"
+                  />
                 </div>
                 <!-- End card say -->
               </div>
@@ -575,7 +939,7 @@
     <!-- End Subscribe section -->
 
     <!-- Start Footer -->
-     <footer>
+    <footer>
       <div class="container">
         <div class="row">
           <div
@@ -583,109 +947,111 @@
           >
             <img src="./media/image/logo.png" alt="logo footer" />
             <p>
-              Miswak Dental Foundation is one of the largest dental treatment
-              institutions in the Kingdom of Saudi Arabia and contains more than
-              80 branches throughout the Kingdom .
+              هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
+              هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو
+              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+              التطبيق
             </p>
-            <form action="" class="subscribe_form">
-              <div class="form-group">
-                <input
-                  type="email"
-                  name=""
-                  id=""
-                  class="form-control"
-                  placeholder="subscribe our offers & news"
-                />
-                <button type="submit" class="btn">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </form>
-            <div class="payment_footer">
-              <img src="./media/image/mada.png" alt="mada" />
-              <img src="./media/image/visa.png" alt="visa" />
-              <img src="./media/image/mastercard.png" alt="mastercard" />
-            </div>
+            <ul class="socialicon">
+              <li>
+                <a
+                  target="_blank"
+                  href="https://api.whatsapp.com/send?phone=+201114498111"
+                  ><i class="fab fa-whatsapp icon"></i
+                ></a>
+              </li>
+              <li>
+                <a target="_blank" href="#"
+                  ><i class="fa-brands fa-facebook-f icon"></i
+                ></a>
+              </li>
+              <li>
+                <a target="_blank" href="#"
+                  ><i class="fa-brands fa-twitter icon"></i
+                ></a>
+              </li>
+              <li>
+                <a target="_blank" href="#"
+                  ><i class="fa-brands fa-instagram icon"></i
+                ></a>
+              </li>
+            </ul>
           </div>
           <div class="d-lg-flex col-lg-8 col-md-12 col-sm-12 mx-auto">
             <div class="col-lg-4 col-md-12 col-sm-12 col-links">
-              <div class="h3 d-block">Need Help?</div>
+              <div class="h3 d-block">الصفحات الرئيسية</div>
               <div class="d-lg-block">
                 <ul>
                   <li>
-                    <a href="contact.html" class="hvr-float-shadow"
-                      >Contact Us</a
+                    <a href="home.html" class="hvr-float-shadow"
+                      >الرئيسية</a
                     >
                   </li>
                   <li>
-                    <a href="privacy.html" class="hvr-float-shadow"
-                      >Privacy Policy</a
+                    <a href="about.html" class="hvr-float-shadow"
+                      >نبذة عنا</a
                     >
                   </li>
                   <li>
-                    <a href="terms.html" class="hvr-float-shadow"
-                      >Terms & Conditions</a
+                    <a href="courses.html" class="hvr-float-shadow"
+                      >الكورسات</a
                     >
                   </li>
                   <li>
-                    <a href="faq.html" class="hvr-float-shadow">FAQ</a>
+                    <a href="contact.html" class="hvr-float-shadow">تواصل معنا</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12 col-links">
-              <div class="h3 d-block">Quick Links</div>
+              <div class="h3 d-block">روابط اخري</div>
               <div class="d-lg-block">
                 <ul>
                   <li>
-                    <a href="about.html" class="hvr-float-shadow">About Us</a>
+                    <a href="terms.html" class="hvr-float-shadow">الشروط و الاحكام</a>
                   </li>
                   <li>
-                    <a href="doctors.html" class="hvr-float-shadow">Doctors</a>
+                    <a href="privacy.html" class="hvr-float-shadow">سياسة الخصوصية</a>
                   </li>
                   <li>
-                    <a href="services.html" class="hvr-float-shadow"
-                      >Services</a
+                    <a href="faq.html" class="hvr-float-shadow"
+                      >الاسئلة الشائعة</a
                     >
-                  </li>
-                  <li>
-                    <a href="training.html" class="hvr-float-shadow"
-                      >Training Academy</a
-                    >
-                  </li>
-                  <li>
-                    <a href="offers.html" class="hvr-float-shadow">Offers</a>
-                  </li>
-                  <li>
-                    <a href="blog.html" class="hvr-float-shadow">Blog</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12 p-0 col-links">
-              <div class="h3 d-block">Branches</div>
+              <div class="h3 d-block">جهات التواصل</div>
               <div class="d-lg-block">
                 <ul>
                   <li>
-                    <a href="#" class="hvr-float-shadow">Jeddah</a>
+                    <div class="contacts hvr-float-shadow">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <div class="info">
+                        <p>موقعنا :</p>
+                        <span>الدقهلية , المنصورة , شارع سامية الجمل</span>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <a href="#" class="hvr-float-shadow">Elreyad</a>
+                    <div class="contacts">
+                      <i class="fa-solid fa-envelope"></i>
+                      <div class="info">
+                        <p>البريد الالكتروني :</p>
+                        <a href="mailto:coursat22@gmail.com" class="hvr-float-shadow">coursat22@gmail.com</a>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <a href="#" class="hvr-float-shadow">Al Damam</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hvr-float-shadow">Al Khobar</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hvr-float-shadow">Makkah</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hvr-float-shadow">Al madina Al mnwara</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hvr-float-shadow">more......</a>
+                    <div class="contacts">
+                      <i class="fa-solid fa-phone"></i>
+                      <div class="info">
+                        <p>رقم الهاتف :</p>
+                        <a href="tel:01223456789" class="hvr-float-shadow">01223456789</a>
+                        <a href="tel:01123456780" class="hvr-float-shadow">01123456780</a>
+                      </div>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -697,34 +1063,8 @@
         <div class="footer-bottom">
           <div class="container">
             <div class="row">
-              <div class="item col-sm-6">
-                <p class="my-3">All Right Reserved To Almeswak @2022</p>
-              </div>
-              <div class="item col-sm-6">
-                <ul class="socialicon">
-                  <li>
-                    <a
-                      target="_blank"
-                      href="https://api.whatsapp.com/send?phone=+966506661277"
-                      ><i class="fab fa-whatsapp icon"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="#"
-                      ><i class="fa-brands fa-facebook-f icon"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="#"
-                      ><i class="fa-brands fa-twitter icon"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="#"
-                      ><i class="fa-brands fa-instagram icon"></i
-                    ></a>
-                  </li>
-                </ul>
+              <div class="item col-sm-12">
+                <p class="my-3">© كل الحقوق محفوظة @ منصة كورسات 2022</p>
               </div>
             </div>
           </div>
@@ -734,7 +1074,7 @@
     <!-- End Footer -->
 
     <script src="js/main.js"></script>
-    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+    <script src="js/video.min.js"></script>
     <script src="js/counterup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script>

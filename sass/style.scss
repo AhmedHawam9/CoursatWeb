@@ -81,7 +81,7 @@ body {
     svg {
       margin-inline-start: .5rem;
     }
-    &:hover {
+    &:hover, &:focus {
       background-color: transparent;
       border: 1px solid $PrimaryColor;
       color: $PrimaryColor;
@@ -96,7 +96,7 @@ body {
     font-size: .8rem;
     padding: .75rem 2rem;
     transition: .7s ease-in-out;
-    &:hover {
+    &:hover, &:focus {
       background-color: $PrimaryColor;
       color: #fff;
       transition: .7s ease-in-out;
@@ -598,7 +598,7 @@ body {
     }
   }
   .subscribe {
-    height: 30vh;
+    padding: 3rem 0;
     margin: 6rem 0 4rem;
     background-image: url("../media/image/subscribe.jpg");
     background-repeat: no-repeat;
@@ -742,6 +742,138 @@ body {
           background-size: 40px 40px;
           width: 40px;
           height: 40px;
+        }
+      }
+    }
+  }
+  .auth_modal {
+    .modal-dialog {
+      max-width: 70%;
+      .modal-content {
+        .modal-body {
+          padding: 0;
+          .auth {
+            display: flex;
+            .image {
+              width: 40%;
+              background-color: #EDEDF1;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              img {
+                width: 70%;
+                margin: 4rem 0 6rem
+              }
+            }
+            .form {
+              width: 60%;
+              margin: 4rem 4rem 2rem;
+              h4 {
+                font-family: "medium";
+                color: $PrimaryText;
+                margin-bottom: 1rem;
+                span {
+                  color: $PrimaryColor
+                }
+              }
+              p {
+                font-family: "regular";
+                color: #707070;
+                font-size: .9rem;
+                margin-bottom: 3rem !important;
+              }
+              .form-group {
+                margin-bottom: 1.5rem;
+                position: relative;
+                label {
+                  font-family: "light";
+                  color: #000;
+                  margin-bottom: .5rem
+                }
+                .form-control {
+                  font-family: "light";
+                  background-color: #EDEDF1;
+                  border: transparent;
+                  font-size: .8rem;
+                  padding: .75rem;
+                  &::placeholder {
+                    color: #ACACAC;
+                  }
+                }
+                .bootstrap-select  {
+                  padding: 0;
+                  .dropdown-menu {
+                    li {
+                      a {
+                        text-align: start;
+                        font-size: .8rem;
+                      }
+                    }
+                  }
+                  .dropdown-toggle {
+                    padding: .5rem;
+                  }
+                  .filter-option {
+                    .filter-option-inner {
+                      text-align: start;
+                      font-size: .8rem;
+                    }
+                  }
+                }
+                .toggle {
+                  position: absolute;
+                  left: .5rem;
+                  top: 2.3rem;
+                  border: transparent;
+                  &:hover {
+                    border: transparent
+                  }
+                }
+              }
+              .PrimaryButton {
+                width: 100%;
+                justify-content: center;
+                margin-top: 3rem
+              }
+              .anthor_link {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 1rem;
+                p {
+                  margin-bottom: 0 !important;
+                  cursor: pointer;
+                  font-family: "light";
+                  color: $PrimaryText;
+                  span {
+                    color: $PrimaryColor
+                  }
+                }
+              }
+            }
+            .verification_code {
+              padding: 2rem;
+              border-radius: 4px;
+              box-shadow: 0 2px 4px rgba(0,0,0,.1);
+              max-width: 400px;
+              background: #fff;
+              .d-flex {
+                direction: ltr;
+              }
+              .form-control {
+                display: block;
+                height: 50px;
+                margin-right: 0.5rem;
+                text-align: center;
+                font-size: 1.25rem;
+                min-width: 0;
+                
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
         }
       }
     }

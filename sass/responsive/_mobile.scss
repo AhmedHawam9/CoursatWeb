@@ -56,4 +56,22 @@
       }
     }
   }
+  .subscribe {
+    form {
+      margin-top: 2rem;
+    }
+  }
+  .students_say_about .swiper .swiper-button-next, .students_say_about .swiper .swiper-rtl .swiper-button-prev {
+    right: 15%;
+  }
+  .students_say_about .swiper .swiper-button-prev, body .students_say_about .swiper .swiper-rtl .swiper-button-next {
+    right: 2%;
+  }
+  footer {
+    .logo-col {
+      img {
+        width: 30%;
+      }
+    }
+  }
 }
