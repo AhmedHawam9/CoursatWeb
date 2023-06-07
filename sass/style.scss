@@ -44,6 +44,23 @@ body {
   p {
     margin-bottom: 0 !important;
   }
+  .swal2-popup {
+    width: 35em;
+    border-radius: 25px;
+  }
+  .swal2-title {
+    font-size: 1.2rem;
+    font-family: "medium";
+    color: $PrimaryText;
+    margin: 3rem 0 1rem;
+  }
+  .swal2-html-container {
+    font-family: "regular";
+    color: $SecondText;
+    font-size: 1rem;
+    width: 60%;
+    margin: 0 auto;
+  }
   .btn:focus,
   .form-check-input:focus,
   .form-check :focus,
@@ -876,6 +893,319 @@ body {
           }
         }
       }
+    }
+  }
+  .single_course {
+    margin: 3rem 0;
+    .video-js {
+      height: 520px;
+      .vjs-big-play-button {
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../media/image/icon/play.png');
+        background-repeat: no-repeat;
+        background-size: 60px;
+        background-position: 50% calc(50% - 10px);
+        border: none !important; // @stylint ignore
+        box-shadow: none !important; // @stylint ignore
+        &:before {
+          content: "";
+          display: none;
+        }
+        &:hover {
+          background-color: transparent;
+          opacity: .7;
+        }
+        .vjs-icon-placeholder {
+          &:before {
+            display: none
+          }
+        }
+      }
+    }
+    .details_course {
+      .course_name {
+        font-family: "medium";
+        color: $PrimaryText;
+        margin: 2rem 0 1rem;
+      }
+      .info {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        li {
+          margin-inline-end: 1.5rem;
+          svg {
+            color: $PrimaryColor;
+            margin-inline-end: .5rem;
+          }
+          .text {
+            color: $SecondText;
+            font-family: "medium";
+            font-size: .8rem;
+          }
+        }
+      }
+      .description {
+        font-family: "regular";
+        color: $SecondText;
+        font-size: .9rem;
+        margin-top: 1.5rem;
+      }
+      .nav-pills {
+        margin-top: 2rem;
+        .nav-item {
+          margin-inline-end: 1.5rem;
+          .nav-link {
+            font-family: "regular";
+            color: $SecondText;
+            padding: .7rem 0;
+            font-size: 1.2rem;
+            border-radius: 0;
+            &.active {
+              color: $PrimaryText;
+              font-family: "medium";
+              background-color: transparent;
+              border-bottom: 2px solid $PrimaryColor;
+            }
+          }
+        }
+      }
+      .tab-content {
+        .tab-pane {
+          p {
+            font-family: "regular";
+            color: $SecondText;
+            font-size: .9rem;
+          }
+          .accordion {
+            margin-top: 2rem;
+            .accordion-item {
+              margin-bottom: 1rem;
+              border: transparent;
+              .accordion-header {
+                .accordion-button {
+                  background-color: #EFF1F6;
+                  border-radius: 10px;
+                  .title {
+                    text-align: start;
+                    p {
+                      font-family: "regular";
+                      color: $PrimaryColor;
+                      font-size: 1rem;
+                      margin-bottom: .5rem !important;
+                    }
+                    .text {
+                      font-family: "light";
+                      color: $SecondText;
+                      font-size: .8rem;
+                    }
+                  }
+                  &.collapsed {
+                    background-color: #F8F8F8;
+                    .title {
+                      p {
+                        color: $PrimaryText;
+                      }
+                    }
+                  }
+                  &::after {
+                    margin-right: auto;
+                    margin-left: unset;
+                  }
+                }
+              }
+              .accordion-body {
+                .accordion {
+                  margin-top: 0;
+                  .accordion-item {
+                    border-bottom: 1px dashed #B4B4B4;
+                    margin-bottom: 0;
+                    .accordion-header {
+                      .accordion-button {
+                        background-color: transparent;
+                        border-radius: 0;
+                        box-shadow: unset;
+                        color: $PrimaryText;
+                        font-family: "regular";
+                      }
+                    }
+                    .accordion-body {
+                      .list_content_lesson {
+                        list-style: none;
+                        margin-bottom: 0;
+                        .list_content {
+                          display: flex;
+                          align-items: center;
+                          justify-content: space-between;
+                          margin-bottom: 1rem;
+                          .title {
+                            color: #525356;
+                            svg {
+                              margin-inline-end: 0.5rem;
+                            }
+                            span {
+                              font-family: "light";
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .list_live {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            .live_card {
+              width: 48%;
+              background-color: #F8F8F8;
+              margin-top: 1.5rem;
+              padding: 1.5rem;
+              border-radius: 10px;
+              margin-inline-end: 3%;
+              &:nth-child(2n) {
+                margin-inline-end: 0;
+              }
+              .title {
+                font-family: "regular";
+                color: $PrimaryText;
+                font-size: 1.1rem;
+              }
+              .status {
+                background-color: #FF163D;
+                color: #fff;
+                font-family: "light";
+                font-size: .7rem;
+                padding: .2rem .5rem;
+                border-radius: 5px;
+              }
+              .course_name {
+                display: block;
+                margin: 1rem 0 !important;
+                font-family: "light";
+                color: #8D8D8D;
+                font-size: .8rem;
+              }
+              .PrimaryButton {
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+    }
+    .list_course_info {
+      border: 1px solid #EBEAED;
+      padding: 1.2rem;
+      .list_info {
+        list-style: none;
+        margin-bottom: 0;
+        li {
+          margin-bottom: 2rem;
+          svg {
+            color: $PrimaryColor;
+          }
+          .title {
+            color: $PrimaryText;
+            font-family: "light";
+            font-size: .8rem;
+          }
+          .text {
+            color: #8D8D8D;
+            font-family: "light";
+            font-size: .8rem;
+          }
+          &:last-child {
+            margin-bottom: 0
+          }
+        }
+      }
+      .PrimaryButton {
+        width: 100%;
+        justify-content: center;
+        margin: 1rem 0;
+      }
+      .SecondaryButton {
+        width: 100%;
+        justify-content: center
+      }
+    }
+  }
+  .payment {
+    margin: 5rem 0;
+    h5 {
+      font-family: "semibold";
+      color: $PrimaryText
+    }
+    p {
+      font-family: "medium";
+      color: $SecondText;
+      font-size: .9rem;
+      margin-bottom: 2.5rem !important;
+    }
+    .form-check {
+      display: inline-block;
+      width: 20%;
+      margin-bottom: 3rem;
+      .form-check-input {
+        &:checked ~ .form-check-label {
+          border: 1px solid $PrimaryColor;
+        }
+      }
+      .form-check-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border: 1px solid #B1B1B1;
+        border-radius: 10px;
+        padding: 2rem;
+        span {
+          font-family: "regular";
+          color: $PrimaryText
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
+    .text {
+      display: block;
+      font-family: "regular";
+      color: $SecondText;
+      font-size: .9rem;
+    }
+    .transform {
+      display: block;
+      font-family: "regular";
+      color: $SecondText;
+      font-size: .8rem;
+      margin: 1rem 0 .5rem;
+    }
+    .number {
+      display: block;
+      font-family: "medium";
+      color: $PrimaryText;
+      font-size: .9rem;
+    }
+    .PrimaryButton {
+      margin-top: 2rem;
+      padding: .75rem 4rem
     }
   }
 

@@ -17,7 +17,8 @@
     <!-- ? Main CSS -->
 
     <!-- ? Custom CSS -->
-    <link rel="stylesheet" href="css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/video-js.min.css" />
+    <link rel="stylesheet" href="css/sweet-alert.css" />
     <!-- ? Custom CSS -->
 
     <!-- ? Main JavaScript -->
@@ -30,6 +31,7 @@
     <!-- ? Custom JavaScript -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/sweet-alert.min.js"></script>
     <!-- ? Custom JavaScript -->
 
     <!-- ? Title -->
@@ -50,7 +52,7 @@
 
   <body data-spy="scroll" data-target=".navbar">
     <!-- Start Navbar section -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" id="navbar">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="./media/image/logo.png" class="logo" alt="logo" />
@@ -69,21 +71,35 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">الرئيسية</a>
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >الرئيسية</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">نبذة عنا</a>
+              <a class="nav-link" href="/#about">نبذة عنا</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="courses.html">الكورسات</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">تواصل معنا</a>
+              <a class="nav-link" href="/#subscribe">تواصل معنا</a>
             </li>
           </ul>
           <div class="d-flex">
-            <button class="btn SecondaryButton" data-bs-toggle="modal" data-bs-target="#registerModal">انشاء حساب</button>
-            <button class="btn PrimaryButton" data-bs-toggle="modal" data-bs-target="#loginModal">تسجيل الدخول</button>
+            <button
+              class="btn SecondaryButton"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+            >
+              انشاء حساب
+            </button>
+            <button
+              class="btn PrimaryButton"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              تسجيل الدخول
+            </button>
           </div>
         </div>
       </div>
@@ -92,18 +108,358 @@
 
     <!-- Start Breadcrumb section -->
     <section class="breadcrumb">
-        <img src="./media/image/breadcrumb.jpg" alt="breadcrumb">
-        <div class="content">
-          <h2 class="title">الكورسات</h2>
-          <p><a href="#">الرئيسية</a> > الكورسات > تفاصيل الكورس</p>
-        </div>
+      <img src="./media/image/breadcrumb.jpg" alt="breadcrumb" />
+      <div class="content">
+        <h2 class="title">الكورسات</h2>
+        <p><a href="#">الرئيسية</a> > الكورسات > تفاصيل الكورس</p>
+      </div>
     </section>
     <!-- End Breadcrumb section -->
 
     <!-- Start Single Course section -->
     <section class="single_course">
       <div class="container">
-        
+        <div class="row">
+          <div class="col-lg-9 col-12">
+            <!-- Start video -->
+            <div class="video">
+              <div class="row w-100 mx-auto">
+                <video
+                  id="my-video"
+                  class="video-js"
+                  controls
+                  preload="auto"
+                  width="640"
+                  height="264"
+                  poster="./media/image/video.jpg"
+                  data-setup="{}"
+                >
+                  <source src="./media/video/video.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+            <!-- End video -->
+
+            <!-- Details course -->
+            <div class="details_course">
+              <h4 class="course_name">
+                كورس مادة المحاسبة المالية الترم الاول
+              </h4>
+              <ul class="info">
+                <li>
+                  <i class="fa-brands fa-youtube"></i>
+                  <span class="text">20 فيديو</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-book-open"></i>
+                  <span class="text">12 مذكرة</span>
+                </li>
+              </ul>
+              <p class="description">
+                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
+                هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو
+                العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+                التطبيق.إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص
+                العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي
+                أخطاء لغوية، هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،
+                لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل
+                هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف
+                التى يولدها التطبيق.إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح
+                لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو
+                مقسما ولا يحوي أخطاء لغوية،
+              </p>
+
+              <!-- Tabs course content & live -->
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="pills-content-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-content"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-content"
+                    aria-selected="true"
+                  >
+                    محتويات الكورس
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="pills-live-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-live"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-live"
+                    aria-selected="false"
+                  >
+                    المحاضرات المباشرة
+                  </button>
+                </li>
+              </ul>
+              <!-- Tabs course content & live -->
+
+              <!-- Tabs content course content & live -->
+              <div class="tab-content" id="pills-tabContent">
+                <!-- The contents of the course -->
+                <div
+                  class="tab-pane fade show active"
+                  id="pills-content"
+                  role="tabpanel"
+                  aria-labelledby="pills-content-tab"
+                  tabindex="0"
+                >
+                  <p class="text">
+                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
+                    توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل
+                    هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد
+                    الحروف التى يولدها التطبيق.إذا كنت تحتاج إلى عدد أكبر من
+                    الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد،
+                    النص لن يبدو مقسما ولا يحوي أخطاء لغوية،
+                  </p>
+
+                  <!-- List Lesson of course -->
+                  <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <!-- For loop this Lesson card & change accordion ID -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          <div class="title">
+                            <p>الوحدة الأولى : مفهوم مادة الاقتصاد المالى</p>
+                            <span class="text">3 فيديو , 2 مزكرة pdf</span>
+                          </div>
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <!-- Start List of Lesson -->
+                          <div class="accordion" id="accordionExample">
+                            <!-- For loop this Lesson card & change accordion ID -->
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  الدرس الاول
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  <!-- Start list content of lesson -->
+                                  <ul class="list_content_lesson">
+                                    <!-- For loop this card content -->
+                                    <li class="list_content">
+                                      <p class="title">
+                                        <i class="fa-solid fa-video"></i>
+                                        <span>الحصة الاولي : مُقدمة</span>
+                                      </p>
+                                      <i class="fa-solid fa-lock"></i>
+                                    </li>
+                                    <!-- For loop this card content -->
+                                    
+                                    <!-- For loop this card content -->
+                                    <li class="list_content">
+                                      <p class="title">
+                                        <i class="fa-solid fa-video"></i>
+                                        <span>الحصة الاولي : مُقدمة</span>
+                                      </p>
+                                      <i class="fa-solid fa-lock"></i>
+                                    </li>
+                                    <!-- For loop this card content -->
+
+                                    <!-- For loop this card content -->
+                                    <li class="list_content">
+                                      <p class="title">
+                                        <i class="fa-solid fa-video"></i>
+                                        <span>الحصة الاولي : مُقدمة</span>
+                                      </p>
+                                      <i class="fa-solid fa-lock"></i>
+                                    </li>
+                                    <!-- For loop this card content -->
+                                  </ul>
+                                  <!-- Start list content of lesson -->
+                                </div>
+                              </div>
+                            </div>
+                            <!-- For loop this Lesson card & change accordion ID -->
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  الدرس الثاني
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  الدرس الثالث
+                                </button>
+                              </h2>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- End List of Lesson -->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- For loop this content card & change accordion ID -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          <div class="title">
+                            <p>الوحدة الثانية : مفهوم مادة الاقتصاد المالى</p>
+                            <span class="text">3 فيديو , 2 مزكرة pdf</span>
+                          </div>
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- For loop this content card & change accordion ID -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                          <div class="title">
+                            <p>الوحدة الثالثة : مفهوم مادة الاقتصاد المالى</p>
+                            <span class="text">3 فيديو , 2 مزكرة pdf</span>
+                          </div>
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- List Lesson of course -->
+                </div>
+                <!-- The contents of the course -->
+
+                <!-- Live lectures -->
+                <div
+                  class="tab-pane fade"
+                  id="pills-live"
+                  role="tabpanel"
+                  aria-labelledby="pills-live-tab"
+                  tabindex="0"
+                >
+                  <ul class="list_live">
+                    <!-- For loop this live card -->
+                    <li class="live_card">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p class="title">حصة لشرح اساسيات المحاسبة</p>
+                        <span class="status">Live</span>
+                      </div>
+                      <span class="course_name">المحاسبة المالية</span>
+                      <a href="#" class="btn PrimaryButton">الدخول الآن</a>
+                    </li>
+                    <!-- For loop this live card -->
+
+                    <!-- For loop this live card -->
+                    <li class="live_card">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p class="title">حصة لشرح اساسيات المحاسبة</p>
+                        <span class="status">Live</span>
+                      </div>
+                      <span class="course_name">المحاسبة المالية</span>
+                      <a href="#" class="btn PrimaryButton">الدخول الآن</a>
+                    </li>
+                    <!-- For loop this live card -->
+
+                    <!-- For loop this live card -->
+                    <li class="live_card">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p class="title">حصة لشرح اساسيات المحاسبة</p>
+                        <span class="status">Live</span>
+                      </div>
+                      <span class="course_name">المحاسبة المالية</span>
+                      <a href="#" class="btn PrimaryButton">الدخول الآن</a>
+                    </li>
+                    <!-- For loop this live card -->
+                  </ul>
+                </div>
+                <!-- Live lectures -->
+              </div>
+              <!-- Tabs content course content & live -->
+            </div>
+            <!-- Details course -->
+          </div>
+          <div class="col-lg-3 col-12">
+            <!-- List course info -->
+            <div class="list_course_info">
+              <ul class="list_info">
+                <li>
+                  <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                  <span class="title">السعر : </span>
+                  <span class="text">250 ج (متجدد شهرياً)</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-user"></i>
+                  <span class="title">المٌحاضر : </span>
+                  <span class="text">احمد ايهاب طارق</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-book-open"></i>
+                  <span class="title">المادة : </span>
+                  <span class="text">المحاسبة المالية</span>
+                </li>
+                <li>
+                  <i class="fa-brands fa-youtube"></i>
+                  <span class="title">عدد الفيديوهات : </span>
+                  <span class="text">20</span>
+                </li>
+                <li>
+                  <i class="fa-regular fa-copy"></i>
+                  <span class="title">عدد المذكرات : </span>
+                  <span class="text">29</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-person-chalkboard"></i>
+                  <span class="title">عدد الدروس : </span>
+                  <span class="text">12</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-globe"></i>
+                  <span class="title">اللغة : </span>
+                  <span class="text">الانجليزية</span>
+                </li>
+              </ul>
+              <button type="button" class="btn PrimaryButton" id="Join">انضم الان</button>
+              <a href="payment.html" class="btn SecondaryButton">
+                شراء الكورس
+              </a>
+
+              <script>
+                $('#Join').click(function(){
+                  Swal.fire({
+                    title: 'تم ارسال طلبك بالانضمام الي الكورس',
+                    text: 'اتجه الآن الى مقر الكورس لدفع التكاليف الخاصة بالكورس واحصل عليه مباشرة',
+                    imageUrl: './media/image/icon/success.png',
+                    imageWidth: 100,
+                    imageHeight: 100,
+                    imageAlt: 'success',
+                    showConfirmButton: false,
+                  })
+                });
+              </script>
+            </div>
+            <!-- List course info -->
+          </div>
+        </div>
       </div>
     </section>
     <!-- End Single Course section -->
@@ -153,22 +509,18 @@
               <div class="d-lg-block">
                 <ul>
                   <li>
-                    <a href="home.html" class="hvr-float-shadow"
-                      >الرئيسية</a
-                    >
+                    <a href="home.html" class="hvr-float-shadow">الرئيسية</a>
                   </li>
                   <li>
-                    <a href="about.html" class="hvr-float-shadow"
-                      >نبذة عنا</a
-                    >
+                    <a href="about.html" class="hvr-float-shadow">نبذة عنا</a>
                   </li>
                   <li>
-                    <a href="courses.html" class="hvr-float-shadow"
-                      >الكورسات</a
-                    >
+                    <a href="courses.html" class="hvr-float-shadow">الكورسات</a>
                   </li>
                   <li>
-                    <a href="contact.html" class="hvr-float-shadow">تواصل معنا</a>
+                    <a href="contact.html" class="hvr-float-shadow"
+                      >تواصل معنا</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -178,10 +530,14 @@
               <div class="d-lg-block">
                 <ul>
                   <li>
-                    <a href="terms.html" class="hvr-float-shadow">الشروط و الاحكام</a>
+                    <a href="terms.html" class="hvr-float-shadow"
+                      >الشروط و الاحكام</a
+                    >
                   </li>
                   <li>
-                    <a href="privacy.html" class="hvr-float-shadow">سياسة الخصوصية</a>
+                    <a href="privacy.html" class="hvr-float-shadow"
+                      >سياسة الخصوصية</a
+                    >
                   </li>
                   <li>
                     <a href="faq.html" class="hvr-float-shadow"
@@ -244,7 +600,7 @@
     <!-- End Footer -->
 
     <script src="js/main.js"></script>
-    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+    <script src="js/video.min.js"></script>
     <script src="js/counterup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script>

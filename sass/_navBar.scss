@@ -3,9 +3,10 @@
   justify-content: space-between;
   padding: 1rem 0;
   background-color: #F7F5FA;
-    .logo {
-      width: 75px;
-    }
+  transition: all 0.5s linear;
+  .logo {
+    width: 75px;
+  }
   .navbar-collapse {
     .navbar-nav {
       margin: 0 auto;
@@ -22,5 +23,13 @@
     .SecondaryButton {
       margin-inline-end: 1rem;
     }
+  }
+  &.scrolled {
+    background-color: rgba($color: #F7F5FA, $alpha: 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    transition: all 0.5s linear;
   }
 }

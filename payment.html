@@ -92,63 +92,51 @@
     </nav>
     <!-- End Navbar section -->
 
-    <!-- Start Breadcrumb section -->
-    <section class="breadcrumb">
-        <img src="./media/image/breadcrumb.jpg" alt="breadcrumb">
-        <div class="content">
-          <h2 class="title">الكورسات</h2>
-          <p><a href="#">الرئيسية</a> > الكورسات</p>
-        </div>
-    </section>
-    <!-- End Breadcrumb section -->
-
-    <!-- Start Course section -->
-    <section class="courses">
+    <!-- Start payment section -->
+    <section class="payment">
       <div class="container">
-        <div class="filter_table">
-            <div class="form-group">
-                <input type="search" name="" id="" class="form-control" placeholder="ابحث بإسم المادة">
-                <i class="fa-solid fa-magnifying-glass"></i>
+        <h5>شراء الكورس</h5>
+        <p>من فضلك قم بأختيار طريقة الدفع المناسبة لك.</p>
+        <form action="">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment" value="" id="vodafone" onchange="toggleDiv('vodafonePayment', 'instapayPayment')" hidden>
+                <label class="form-check-label" for="vodafone">
+                    <span>فودافون كاش</span>
+                    <img src="./media/image/icon/vodafone.png" alt="vodafone">
+                </label>
             </div>
-            <select name="" id="" class="form-control selectpicker" title="الجامعة">
-                <option value="">تيست</option>
-                <option value="">تيست</option>
-                <option value="">تيست</option>
-            </select>
-            <select name="" id="" class="form-control selectpicker" title="الكلية">
-                <option value="">تيست</option>
-                <option value="">تيست</option>
-                <option value="">تيست</option>
-            </select>
-        </div>
-        <div class="row">
-        <!-- For loop this card course -->
-        <div class="col-lg-4 col-md-6 col-12">
-          <a href="single_course.html" class="card_course">
-            <img src="./media/image/course1.jpg" alt="course">
-            <div class="d-flex justify-content-between align-items-center">
-                <p class="subject">محاسبة ضريبية</p>
-                <p class="price">250 ج</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment" value="" id="instapay" onchange="toggleDiv('instapayPayment', 'vodafonePayment')" hidden>
+                <label class="form-check-label" for="instapay">
+                    <span>انستا باي</span>
+                    <img src="./media/image/icon/instapay.png" alt="instapay">
+                </label>
             </div>
-            <h5 class="title">الوحدة الأولى : مفهوم مادة المحاسبة المالية</h5>
-            <p class="text">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى...</p>
-            <div class="info_course">
-                <p class="info">
-                <i class="fa-solid fa-video"></i>
-                <span>20 فيديو</span>
-                </p>
-                <p class="info">
-                <i class="fa-solid fa-person-chalkboard"></i>
-                <span>12 مُذكرة</span>
-                </p>
+            <div id="vodafonePayment" style="display: none;">
+                <span class="text">ارسل تكلفة الكورس المذكورة الى الرقم بلاسفل ثم ارفع صورة تأكيدية لعملية التحويل </span>
+                <span class="transform">رقم التحويل</span>
+                <span class="number">01025482215</span>
             </div>
-          </a>
-        </div>
-        <!-- For loop this card course -->
-        </div>
+            <div id="instapayPayment" style="display: none;">
+                <span class="text">ارسل تكلفة الكورس المذكورة الى الرقم بلاسفل ثم ارفع صورة تأكيدية لعملية التحويل </span>
+                <span class="transform">حساب التحويل</span>
+                <span class="number">someone@instapay</span>
+            </div>
+            <button type="submit" class="btn PrimaryButton">تأكيد التحويل</button>
+
+            <script>
+                function toggleDiv(showDiv, hideDiv) {
+                    var show = document.getElementById(showDiv);
+                    var hide = document.getElementById(hideDiv);
+
+                    show.style.display = 'block';
+                    hide.style.display = 'none';
+                }
+            </script>
+        </form>
       </div>
     </section>
-    <!-- End Course section -->
+    <!-- End payment section -->
 
     <!-- Start Footer -->
     <footer>
@@ -284,16 +272,5 @@
       </div>
     </footer>
     <!-- End Footer -->
-
-    <script src="js/main.js"></script>
-    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
-    <script src="js/counterup.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script>
-      $(".counter").counterUp({
-        delay: 20,
-        time: 2000,
-      });
-    </script>
   </body>
 </html>

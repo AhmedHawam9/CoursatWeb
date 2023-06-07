@@ -10,3 +10,14 @@ for (let i = 0; i < menuLengthNavbar; i++) {
   }
 }
 //=========== Active sidebar dashboard =============
+
+
+window.addEventListener('scroll', function() {
+  var navbar = document.getElementById('navbar');
+  
+  if (window.scrollY > 500) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
