@@ -82,4 +82,31 @@
       }
     }
   }
+
+  .sidebar {
+    width: 30%;
+    .side-nav {
+      .nav-item {
+        .nav-link {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+  .my_course {
+    .courses {
+      .card_course {
+        img {
+          height: 300px;
+        }
+      }
+    }
+  }
+  .my_single_course {
+    .single_course {
+      .video-js {
+        height: 300px;
+      }
+    }
+  }
 }

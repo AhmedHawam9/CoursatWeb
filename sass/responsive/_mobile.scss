@@ -74,6 +74,41 @@
     width: 100%;
     margin-inline-end: 0;
   }
+  .profile {
+    flex-direction: column;
+    .sidebar {
+      width: 100%;
+      height: fit-content;
+      min-height: fit-content;
+      padding: 1rem;
+      .side-nav {
+        margin-bottom: 0;
+        .nav-item {
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .my_course {
+      width: 100%;
+      margin: 0;
+      .courses {
+        padding: 2rem 1rem;
+        .card_course {
+          img {
+            height: 250px;
+          }
+        }
+      }
+    }
+    .my_single_course {
+      .single_course {
+        padding: 1.5rem 1rem;
+        margin: 0;
+      }
+    }
+  }
   footer {
     .logo-col {
       img {

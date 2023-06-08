@@ -92,78 +92,98 @@
     </nav>
     <!-- End Navbar section -->
 
-    <!-- Start payment section -->
-    <section class="payment">
-      <div class="container">
-        <h5>شراء الكورس</h5>
-        <p>من فضلك قم بأختيار طريقة الدفع المناسبة لك.</p>
-        <form action="">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="payment" value="" id="vodafone" onchange="toggleDiv('vodafonePayment', 'instapayPayment')" hidden>
-                <label class="form-check-label" for="vodafone">
-                    <span>فودافون كاش</span>
-                    <img src="./media/image/icon/vodafone.png" alt="vodafone">
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="payment" value="" id="instapay" onchange="toggleDiv('instapayPayment', 'vodafonePayment')" hidden>
-                <label class="form-check-label" for="instapay">
-                    <span>انستا باي</span>
-                    <img src="./media/image/icon/instapay.png" alt="instapay">
-                </label>
-            </div>
-            <div id="vodafonePayment" style="display: none;">
-                <span class="text">ارسل تكلفة الكورس المذكورة الى الرقم بلاسفل ثم ارفع صورة تأكيدية لعملية التحويل </span>
-                <span class="transform">رقم التحويل</span>
-                <span class="number">01025482215</span>
-                <div class="form-group">
-                  <label for="vodafoneFile">
-                    <i class="fa-regular fa-image"></i>
-                    <span>اضغط هنا لرفع صورة تأكيدية للتحويل</span>
-                  </label>
-                  <input type="file" name="" id="vodafoneFile" class="form-control" placeholder="" hidden>
-                  <script>
-                    $('#vodafoneFile').change(function() {
-                      var i = $(this).prev('label').clone();
-                      var file = $('#vodafoneFile')[0].files[0].name;
-                      $(this).prev('label').text(file);
-                    });
-                  </script>
-                </div>
-            </div>
-            <div id="instapayPayment" style="display: none;">
-                <span class="text">ارسل تكلفة الكورس المذكورة الى الرقم بلاسفل ثم ارفع صورة تأكيدية لعملية التحويل </span>
-                <span class="transform">حساب التحويل</span>
-                <span class="number">someone@instapay</span>
-                <div class="form-group">
-                  <label for="instapayFile">
-                    <i class="fa-regular fa-image"></i>
-                    <span>اضغط هنا لرفع صورة تأكيدية للتحويل</span>
-                  </label>
-                  <input type="file" name="" id="instapayFile" class="form-control" placeholder="" hidden>
-                  <script>
-                    $('#instapayFile').change(function() {
-                      var i = $(this).prev('label').clone();
-                      var file = $('#instapayFile')[0].files[0].name;
-                      $(this).prev('label').text(file);
-                    });
-                  </script>
-                </div>
-            </div>
-            <button type="submit" class="btn PrimaryButton">تأكيد التحويل</button>
-            <script>
-                function toggleDiv(showDiv, hideDiv) {
-                    var show = document.getElementById(showDiv);
-                    var hide = document.getElementById(hideDiv);
+    <section class="profile">
+        <!-- Start Sidebar section -->
+        <div class="sidebar">
+            <ul class="side-nav">
+                <li class="nav-item">
+                    <a href="my_course.html" class="nav-link">
+                        <i class="fa-solid fa-video"></i>
+                        <span>كورساتي</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="setting.html" class="nav-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>اعدادات الحساب</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="password.html" class="nav-link">
+                        <i class="fa-solid fa-shield"></i>
+                        <span>كلمة المرور</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>تسجيل الخروج</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- End Sidebar section -->
+    
+        <!-- Start course section -->
+        <div class="my_course">
+          <div class="container">
+              <div class="courses">
+                <h4 class="title_section">كل الكورسات ( 20 )</h4>
+                <div class="row">
+                    <!-- For loop this card course -->
+                    <div class="col-lg-4 col-md-12 col-12">
+                      <a href="my_single_course.html" class="card_course">
+                        <img src="./media/image/course1.jpg" alt="course">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="subject">محاسبة ضريبية</p>
+                            <p class="price">250 ج</p>
+                        </div>
+                        <h5 class="title">الوحدة الأولى : مفهوم مادة المحاسبة المالية</h5>
+                        <p class="text">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى...</p>
+                        <div class="info_course">
+                            <p class="info">
+                            <i class="fa-solid fa-video"></i>
+                            <span>20 فيديو</span>
+                            </p>
+                            <p class="info">
+                            <i class="fa-solid fa-person-chalkboard"></i>
+                            <span>12 مُذكرة</span>
+                            </p>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- For loop this card course -->
 
-                    show.style.display = 'block';
-                    hide.style.display = 'none';
-                }
-            </script>
-        </form>
-      </div>
+                    <!-- For loop this card course -->
+                    <div class="col-lg-4 col-md-12 col-12">
+                        <a href="my_single_course.html" class="card_course">
+                          <img src="./media/image/course1.jpg" alt="course">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <p class="subject">محاسبة ضريبية</p>
+                              <p class="price">250 ج</p>
+                          </div>
+                          <h5 class="title">الوحدة الأولى : مفهوم مادة المحاسبة المالية</h5>
+                          <p class="text">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى...</p>
+                          <div class="info_course">
+                              <p class="info">
+                              <i class="fa-solid fa-video"></i>
+                              <span>20 فيديو</span>
+                              </p>
+                              <p class="info">
+                              <i class="fa-solid fa-person-chalkboard"></i>
+                              <span>12 مُذكرة</span>
+                              </p>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- For loop this card course -->
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- End course section -->
     </section>
-    <!-- End payment section -->
+
 
     <!-- Start Footer -->
     <footer>
@@ -299,5 +319,7 @@
       </div>
     </footer>
     <!-- End Footer -->
+
+    <script src="js/main.js"></script>
   </body>
 </html>

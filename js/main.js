@@ -1,4 +1,4 @@
-//=========== Active sidebar dashboard =============
+//=========== Active navbar link =============
 const currentLocationNavbar = location.href;
 const menuItemNavbar = document.querySelectorAll(
   ".navbar-nav .nav-item .nav-link"
@@ -9,7 +9,22 @@ for (let i = 0; i < menuLengthNavbar; i++) {
     menuItemNavbar[i].className = "nav-link active";
   }
 }
-//=========== Active sidebar dashboard =============
+//=========== Active navbar link =============
+
+//=========== Active sidebar link =============
+const currentLocationSidebar = location.href;
+const menuItemSidebar = document.querySelectorAll(
+  ".sidebar .side-nav .nav-item .nav-link"
+);
+const menuLengthSidebar = menuItemSidebar.length;
+for (let i = 0; i < menuLengthSidebar; i++) {
+  if (menuItemSidebar[i].href === currentLocationSidebar) {
+    menuItemSidebar[i].className = "nav-link active";
+  }
+}
+//=========== Active sidebar link =============
+
+
 
 
 window.addEventListener('scroll', function() {
