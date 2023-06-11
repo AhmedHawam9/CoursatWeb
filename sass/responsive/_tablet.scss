@@ -109,4 +109,16 @@
       }
     }
   }
+  .auth_modal {
+    .modal-dialog {
+      max-width: 100%;
+    }
+  }
+  .profile {
+    .password {
+      form {
+        width: 90%;
+      }
+    }
+  }
 }

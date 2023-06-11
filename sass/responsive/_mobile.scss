@@ -116,4 +116,41 @@
       }
     }
   }
+  .discover_academic {
+    .text {
+      width: 60%;
+    }
+  }
+  .auth_modal {
+    .modal-dialog {
+      .modal-content {
+        .modal-body {
+          .auth {
+            flex-direction: column;
+            .image {
+              width: 100%;
+              img {
+                width: 35%;
+                margin: 2rem 0;
+              }
+            }
+            .form {
+              margin: 0;
+              width: 100%;
+              padding: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .profile {
+    .password, .info {
+      width: 100%;
+      margin: 0;
+      form {
+        width: 100%;
+      }
+    }
+  }
 }
