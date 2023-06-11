@@ -773,6 +773,9 @@ body {
       .modal-content {
         .modal-body {
           padding: 0;
+          .btn-close {
+            display: none;
+          }
           .auth {
             display: flex;
             .image {

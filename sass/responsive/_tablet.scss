@@ -112,6 +112,17 @@
   .auth_modal {
     .modal-dialog {
       max-width: 100%;
+      .modal-content {
+        .modal-body {
+          padding: 0;
+          .btn-close {
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+          }
+        }
+      }
     }
   }
   .profile {
