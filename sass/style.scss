@@ -149,9 +149,15 @@ body {
       text-align: center;
       display: block;
       margin-inline-start: auto;
+      position: relative;
       img {
-        height: 400px;
-        width: 50%;
+        height: 320px;
+        width: 40%;
+        position: absolute;
+        bottom: 20%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
       }
     }
     .statistics {
